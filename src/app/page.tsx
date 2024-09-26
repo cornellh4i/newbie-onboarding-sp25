@@ -4,7 +4,7 @@ import vercel_svg from "../../public/vercel.svg";
 
 export default function Home() {
   return (
-    <main
+    <main 
       className="flex min-h-screen flex-col items-center justify-between p-24"
     >
       <div className="text-center mb-8">
@@ -141,6 +141,7 @@ export default function Home() {
           </h2>
           <p className="Sheki was here">
             Explore starter templates for Next.js.
+            Nathnael was here !
           </p>
         </a>
 
