@@ -1,167 +1,171 @@
-import Image from "next/image";
-import next_svg from "../../public/next.svg";
-import vercel_svg from "../../public/vercel.svg";
+import Img from "next/image";
+import someImage from "../../public/vercel.svg";
 
-export default function Home() {
+export default function BlogThing() {
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-between p-24"
-    >
-      <div
-        className="z-10 w-full max-w-5xl items-center justify-between font-mono
-          text-sm lg:flex"
+    <div className="container bg-white" style={{ padding: "10px", margin: 0 }}>
+      {/* Header Section */}
+      <header
+        style={{
+          backgroundColor: "lightgray",
+          boxShadow: "0 4px 2px -2px gray",
+        }}
       >
-        <p
-          className="fixed left-0 top-0 flex w-full justify-center border-b
-            border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8
-            backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:border
-            lg:bg-gray-200 lg:p-4 dark:border-neutral-800 dark:bg-zinc-800/30
-            dark:from-inherit lg:dark:bg-zinc-800/30"
+        <nav
+          className="nav-container"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "15px",
+          }}
         >
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div
-          className="fixed bottom-0 left-0 flex h-48 w-full items-end
-            justify-center bg-gradient-to-t from-white via-white lg:static
-            lg:size-auto lg:bg-none dark:from-black dark:via-black"
+          <h1 style={{ color: "#333", fontSize: "2.5rem" }}>Some Blog Title</h1>
+          <div style={{ display: "flex", gap: "2px" }}>
+            <a
+              href="/"
+              style={{ margin: "5px", textDecoration: "none", color: "#333" }}
+            >
+              Homepage
+            </a>
+            <a href="/about" style={{ color: "red", marginRight: "15px" }}>
+              About us
+            </a>
+            <a href="/contact" style={{ fontWeight: "bold", color: "blue" }}>
+              Contact
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      {/* Blog Posts */}
+      <main style={{ padding: "20px", marginTop: "30px" }}>
+        <section
+          className="blogSection"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+            gap: "25px",
+          }}
         >
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8
-              lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* First post */}
+          <article
+            style={{
+              backgroundColor: "#fafafa",
+              border: "2px solid #ddd",
+              padding: "10px",
+            }}
+            className="blogPost"
           >
-            By{" "}
-            <Image
-              src={vercel_svg}
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+            <Img
+              src={someImage}
+              alt="Random Image"
+              width={350}
+              height={150}
+              style={{ objectFit: "cover" }}
             />
+            <div style={{ padding: "12px" }}>
+              <h2
+                style={{
+                  fontSize: "1.4rem",
+                  color: "#444",
+                  marginBottom: "8px",
+                }}
+              >
+                Random Post Title
+              </h2>
+              <p style={{ color: "green", fontSize: "14px" }}>
+                This is a short description of the blog post. It's a really
+                interesting post.
+              </p>
+              <a href="#" style={{ color: "purple" }}>
+                Continue reading →
+              </a>
+            </div>
+          </article>
+
+          {/* Second post */}
+          <article
+            className="postCard"
+            style={{
+              backgroundColor: "whitesmoke",
+              padding: "20px",
+              borderRadius: "5px",
+            }}
+          >
+            <Img src={someImage} alt="Some image" width={350} height={150} />
+            <h2
+              className="blogTitle"
+              style={{
+                fontSize: "24px",
+                fontFamily: "sans-serif",
+                color: "darkblue",
+              }}
+            >
+              Post About AI
+            </h2>
+            <p style={{ fontSize: "13px", marginBottom: "15px" }}>
+              Some random content here. More text for the blog post. It’s very
+              exciting.
+            </p>
+            <a
+              href="#"
+              className="readMore"
+              style={{
+                color: "red",
+                textDecoration: "underline",
+                fontStyle: "italic",
+              }}
+            >
+              Read more!
+            </a>
+          </article>
+
+          {/* Third post */}
+          <article
+            style={{
+              padding: "20px 15px",
+              border: "1px solid lightgray",
+              boxShadow: "2px 2px 8px rgba(0,0,0,0.1)",
+            }}
+          >
+            <Img src={someImage} alt="An image" width={350} height={150} />
+            <h2 style={{ marginTop: "10px", color: "#222", fontSize: "20px" }}>
+              Blog Post Three
+            </h2>
+            <p style={{ color: "gray", fontSize: "15px" }}>
+              Here’s some more text for the third post. It’s also quite
+              thrilling to read.
+            </p>
+            <a href="#" style={{ color: "#555" }}>
+              Read more →
+            </a>
+          </article>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer
+        style={{
+          padding: "20px",
+          textAlign: "center",
+          backgroundColor: "#efefef",
+          marginTop: "40px",
+        }}
+      >
+        <p style={{ fontSize: "16px", color: "#555" }}>
+          © 2024 Random Blog Inc.
+        </p>
+        <p>
+          <a href="#" style={{ color: "#007bff" }}>
+            Privacy Policy
+          </a>{" "}
+          |
+          <a href="#" style={{ marginLeft: "5px", color: "#007bff" }}>
+            Terms of Use
           </a>
-        </div>
-      </div>
-
-      <div
-        className="relative z-[-1] flex place-items-center before:absolute
-          before:h-[300px] before:w-full before:-translate-x-1/2
-          before:rounded-full before:bg-gradient-radial before:from-white
-          before:to-transparent before:blur-2xl before:content-['']
-          after:absolute after:-z-20 after:h-[180px] after:w-full
-          after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200
-          after:via-blue-200 after:blur-2xl after:content-['']
-          sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]
-          before:dark:bg-gradient-to-br before:dark:from-transparent
-          before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900
-          after:dark:via-[#0141ff] after:dark:opacity-40"
-      >
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70]
-            dark:invert"
-          src={next_svg}
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div
-        className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl
-          lg:grid-cols-4 lg:text-left"
-      >
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4
-            transition-colors hover:border-gray-300 hover:bg-gray-100
-            hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span
-              className="inline-block transition-transform
-                group-hover:translate-x-1 motion-reduce:transform-none"
-            >
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4
-            transition-colors hover:border-gray-300 hover:bg-gray-100
-            hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span
-              className="inline-block transition-transform
-                group-hover:translate-x-1 motion-reduce:transform-none"
-            >
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4
-            transition-colors hover:border-gray-300 hover:bg-gray-100
-            hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span
-              className="inline-block transition-transform
-                group-hover:translate-x-1 motion-reduce:transform-none"
-            >
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4
-            transition-colors hover:border-gray-300 hover:bg-gray-100
-            hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span
-              className="inline-block transition-transform
-                group-hover:translate-x-1 motion-reduce:transform-none"
-            >
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        </p>
+      </footer>
+    </div>
   );
 }
