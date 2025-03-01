@@ -4,13 +4,9 @@ import vercel_svg from "../../public/vercel.svg";
 
 export default function Home() {
   return (
-    <main 
+    <main
       className="flex min-h-screen flex-col items-center justify-between p-24"
     >
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold">Hello, my name is Sheki!</h1>
-      </div>
-      
       <div
         className="z-10 w-full max-w-5xl items-center justify-between font-mono
           text-sm lg:flex"
@@ -139,9 +135,8 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className="Sheki was here">
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
             Explore starter templates for Next.js.
-            Nathnael was here !
           </p>
         </a>
 
@@ -163,7 +158,7 @@ export default function Home() {
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel. Victoria.
+            Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
       </div>
